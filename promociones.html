@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Urban Style</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="promociones.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li class="navbarLogo">
+          <a href="index.html"
+            ><img src="imagenes/Logo-US.png" alt="Logo US"
+          /></a>
+        </li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="promociones.html">Promos</a></li>
+        <li><a href="conjuntos.html">Conjuntos</a></li>
+        <li><a href="login.html">Log In</a></li>
+      </ul>
+    </nav>
+
+    <header>
+      <h3>NO HAY EXCUSA PARA NO SER PARTE</h3>
+    </header>
+
+    <main>
+      <div class="promoContainer">
+        <div class="promosLeft">
+          <!-- BANNERS DE PROMOCIONES -->
+          <div class="promoCard">
+            <img
+              src="imagenes/Promo-Efectivo.png"
+              alt="10% de descuento pagando en efectivo"
+            />
+          </div>
+          <div class="promoCard">
+            <img
+              src="imagenes/Promo-Cuotas.png"
+              alt="3 y 6 cuotas sin interés pagando con tarjeta"
+            />
+          </div>
+          <div class="promoCard">
+            <img
+              src="imagenes/Promo-50OFF.png"
+              alt="50% de descuento en la segunda prenda"
+            />
+          </div>
+          <!-- CALCULADORA DE DESCUENTOS -->
+          <div class="promoCard" id="calcCard">
+            <h4>Calculá tu descuento</h4>
+
+            <!-- REMERAS -->
+            <div>
+              <div class="checkPrendas">
+                <label for="prendaRemeras">Remera/s</label>
+                <input type="checkbox" id="prendaRemeras" />
+              </div>
+              <div
+                id="mostrarCantRemeras"
+                class="mostrarPrendas"
+                style="display: none"
+              >
+                <label for="cantRemeras">Cantidad</label>
+                <input type="number" id="cantRemeras" min="1" value="1" />
+              </div>
+            </div>
+
+            <!-- BUZOS -->
+            <div>
+              <div class="checkPrendas">
+                <label for="prendaBuzos">Buzo/s</label>
+                <input type="checkbox" id="prendaBuzos" />
+              </div>
+              <div
+                id="mostrarCantBuzos"
+                class="mostrarPrendas"
+                style="display: none"
+              >
+                <label for="cantBuzos">Cantidad</label>
+                <input type="number" id="cantBuzos" min="1" value="1" />
+              </div>
+            </div>
+
+            <!-- PANTALONES -->
+            <div>
+              <div class="checkPrendas">
+                <label for="prendaPantalones">Pantalon/es</label>
+                <input type="checkbox" id="prendaPantalones" />
+              </div>
+              <div
+                id="mostrarCantPantalones"
+                class="mostrarPrendas"
+                style="display: none"
+              >
+                <label for="cantPantalones">Cantidad</label>
+                <input type="number" id="cantPantalones" min="1" value="1" />
+              </div>
+            </div>
+
+            <div id="precioTotal">Precio total: $0</div>
+
+            <div>
+              <button id="calcularPromo">Calcular Descuentos</button>
+              <p id="totalFinal"></p>
+            </div>
+          </div>
+          <script src="promociones.js"></script>
+        </div>
+        <div class="conjuntoCard">
+          <img
+            src="imagenes/Conj-RojoOsc-Hombre.png"
+            alt="Conjunto Rojo Oscuro Hombre"
+          />
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <h3>Contáctanos</h3>
+      <ul>
+        <li>Instagram: @urban.style</li>
+        <li>Mail: contacto@urbanstyle.com</li>
+        <li>Teléfono: +54 9 11 1234 5678</li>
+        <li>Dirección: Abasto Shopping (Piso 3), CABA</li>
+      </ul>
+    </footer>
+  </body>
+</html>
