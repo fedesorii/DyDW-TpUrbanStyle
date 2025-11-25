@@ -7,7 +7,9 @@
 
 html,
 body {
-  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; /* Evita el scroll horizontal indeseado */
 }
 
 /* BODY */
@@ -22,63 +24,75 @@ body {
 
 main {
   flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+}
+
+main > img {
+  /* Las imágenes ocupan un tercio del espacio disponible, pero no más de 300px para no pixelarse */
+  width: 30%;
+  max-width: 350px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* NAVBAR */
 nav {
   background: #111;
-  padding: 0px;
-  height: 15vh;
-}
-
-nav ul {
+  width: 100%;
+  height: 80px;
   display: flex;
   align-items: center;
-  list-style: none;
-  justify-content: flex-start;
-  gap: 30px;
-  margin-left: 30px;
+  padding: 0 20px;
 }
 
 .navbarLogo {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  width: 15vw;
-  height: 15vh;
-  overflow: hidden;
+  height: 60px;
+  width: auto;
+  display: flex;
+  align-items: center;
 }
 
 .navbarLogo a {
-  background: none;
-  padding: 0;
-  border: none;
   display: block;
-  width: 100%;
   height: 100%;
+  padding: 0;
 }
 
 .navbarLogo img {
   height: 100%;
-  width: 100%;
-  clip-path: inset(20% 0 0 0);
-  vertical-align: middle;
-  /* overflow: hidden; */
-  object-fit: cover;
-  object-position: center;
+  width: auto;
+  object-fit: contain;
+  /* Invierte el color: el negro se vuelve blanco y Asegura que el color blanco sea puro */
+  filter: invert(100%);
+  filter: brightness(200%);
+}
 
-  filter: invert(100%); /* Invierte el color: el negro se vuelve blanco */
-  filter: brightness(
-    200%
-  ); /* Asegura que el color blanco sea puro (opcional, pero ayuda) */
+nav ul {
+  display: flex;
+  list-style: none;
+  width: 80%;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-around;
 }
 
 nav ul li a {
   text-decoration: none;
   color: #fff;
-  font-size: 1.1rem;
-  padding: 8px 22px;
+  font-size: 1.5rem;
+  padding: 8px 15px;
   border-radius: 20px;
-  background: transparent;
+  white-space: nowrap; /* Obliga al texto a estar en una sola línea */
   transition: background 0.2s;
   border: 2px solid transparent;
   font-weight: 500;
@@ -91,10 +105,10 @@ nav ul li a:focus {
 }
 
 /* HEADER */
-header h3 {
+header h1 {
   text-align: center;
-  margin: 30px 0 20px 0;
-  font-size: 1.5rem;
+  margin: 30px 20px;
+  font-size: 2rem;
   font-weight: bold;
   letter-spacing: 2px;
   color: #111;
@@ -104,8 +118,9 @@ header h3 {
 footer {
   background: #111;
   color: #fff;
-  padding: 25px 0 15px 0;
-  margin-top: 40px;
+  padding: 30px 20px;
+  text-align: center;
+  width: 100%;
 }
 
 footer h3 {
@@ -119,11 +134,51 @@ footer ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 40px;
+  gap: 20px;
   list-style: none;
-  font-size: 1rem;
+  margin-top: 15px;
 }
 
 footer ul li {
   margin: 0 10px;
+}
+
+/* RESPONSIVE PARA CELULARES */
+@media (max-width: 600px) {
+  nav {
+    padding: 0 10px;
+  }
+
+  .navbarLogo {
+    height: 50px;
+  }
+
+  /* Ocultar TEXTO del menú, mantener estructura para íconos */
+  nav ul {
+    gap: 10px;
+  }
+
+  nav ul li a {
+    font-size: 0; /* Truco: Oculta el texto */
+    padding: 10px; /* Mantiene un área clickeable (donde irán los iconos) */
+    background-color: #333; /* Temporal: para que veas dónde están los botones */
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: block;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  main {
+    flex-direction: column;
+  }
+
+  main img {
+    width: 100%;
+    max-width: 90%;
+    height: auto;
+  }
 }

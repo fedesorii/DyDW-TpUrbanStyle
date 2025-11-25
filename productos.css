@@ -1,9 +1,22 @@
 /* Estilos generales */
 main {
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 40px;
+
+  padding: 40px 20px;
   background-color: #2a2a2a;
   color: #f0f0f0;
   font-family: Arial, sans-serif;
+  min-height: calc(100vh - 80px - 150px); /* Ajuste para llenar pantalla */
+}
+
+.productsContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
 }
 
 .productsContainer h2 {
@@ -17,7 +30,6 @@ main {
 .productCarousel {
   display: flex;
   align-items: center;
-  margin-bottom: 30px;
 }
 
 /* Botones de navegación (flechas) */
@@ -51,6 +63,7 @@ main {
 .productThumbnails {
   display: flex;
   gap: 15px;
+  padding-top: 5px;
   overflow-x: auto; /* Permite desplazamiento horizontal si hay muchas imágenes */
   scroll-behavior: smooth; /* Desplazamiento suave */
   -webkit-overflow-scrolling: touch; /* Mejor desplazamiento en iOS */
@@ -95,11 +108,8 @@ main {
 /* Estilos para los banners de promoción */
 .promoBanner {
   width: 100%;
-  height: auto;
-  background-size: cover; /* Asegura que el fondo cubra todo el banner */
-  background-position: center;
+  margin: 0;
   border-radius: 8px;
-  margin: 20px 0; /* Espacio antes y después del banner */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -107,13 +117,14 @@ main {
 }
 
 .promoBanner img {
-  width: 762px;
-  height: 174px;
+  max-width: 100%;
+  height: 100%;
+  width: auto;
   object-fit: contain; /* Asegura que la imagen se vea completa */
 }
 
 /* Teléfonos */
-@media (max-width: 767px) {
+@media (max-width: 600px) {
   main {
     padding: 10px;
   }
@@ -151,37 +162,6 @@ main {
     width: 100%;
     height: auto;
     max-height: 100px;
-    object-fit: contain;
-  }
-}
-
-/* Tablets */
-@media (min-width: 768px) and (max-width: 1024px) {
-  main {
-    padding: 15px;
-  }
-
-  .productsContainer h2 {
-    font-size: 22px;
-  }
-
-  .productThumbnails {
-    gap: 12px;
-  }
-
-  .productThumbnailItem {
-    min-width: 140px;
-    max-width: 170px;
-  }
-
-  .promoBanner {
-    height: 150px;
-  }
-
-  .promoBanner img {
-    width: 100%;
-    height: auto;
-    max-height: 150px;
     object-fit: contain;
   }
 }
